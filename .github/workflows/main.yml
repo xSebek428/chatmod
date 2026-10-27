@@ -1,0 +1,30 @@
+
+name: Build Minecraft Mod
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      - name: Ustaw Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Buduj moda
+        run: chmod +x gradlew && ./gradlew build
+
+      - name: Udostępnij plik JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: BotMod
+          path: build/libs/*.jar
