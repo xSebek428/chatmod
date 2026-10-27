@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "botmod",
+  "version": "${version}",
+  "name": "Bot Mod",
+  "description": "Proste NPC sterowane z menu GUI.",
+  "authors": ["BotMod"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["pl.example.botmod.BotMod"],
+    "client": ["pl.example.botmod.BotModClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
